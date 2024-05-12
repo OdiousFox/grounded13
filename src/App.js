@@ -5,6 +5,7 @@ import Header from './ui/header.js';
 import MapContainer from "./map/mapcontainer";
 import map from ".//images/img.png"
 import Menu from "./ui/menu.js"
+import ArcgisMap from "./map/arcgis-map";
 
 function App() {
     return (
@@ -23,7 +24,8 @@ function App() {
                     flex: '2',
                     marginRight: '1rem'
                 }}>
-                    <MapContainer src={map} alt={"Map"} style={{
+                    {/*<MapContainer src={map} alt={"Map"}/>*/}
+                    <ArcgisMap style={{
                         width: '100%',
                         height: '400px', // Adjust height as needed
                         objectFit: 'cover'
@@ -35,9 +37,15 @@ function App() {
                     display: 'flex',
                     flexDirection: 'column'
                 }}>
-                        <Menu></Menu>
+                    <Menu></Menu>
                 </div>
+
             </main>
+            <div>
+                <h1>Licenses ></h1>
+            </div>
+
+
         </div>
     );
 }
