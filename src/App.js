@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Map from './map/map.js';
@@ -8,6 +9,12 @@ import Menu from "./ui/menu.js"
 import ArcgisMap from "./map/arcgis-map";
 
 function App() {
+    const licenses = [
+        { title: 'MIT License', URL: 'https://opensource.org/licenses/MIT' },
+        { title: 'GPL License', URL: 'https://www.gnu.org/licenses/gpl-3.0.en.html' },
+        { title: 'Apache License 2.0', URL: 'https://www.apache.org/licenses/LICENSE-2.0' }
+    ];
+
     return (
         <div>
             <Header style={{
@@ -41,11 +48,19 @@ function App() {
                 </div>
 
             </main>
-            <div>
-                <h1>Licenses ></h1>
+
+            <div style={{bottom: '10%', left: '10px', width: '200px'}}>
+                <h1>Licenses</h1>
+                <ul style={{ paddingBottom: '20px', borderRadius: '5px'}}>
+                    {licenses.map((license, index) => (
+                        <li key={index} style={{ listStyleType: 'none', padding: '5px 0' }}>
+                            <a href={license.URL} target="_blank" rel="noopener noreferrer">
+                                {license.title}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
             </div>
-
-
         </div>
     );
 }
